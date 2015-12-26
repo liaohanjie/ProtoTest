@@ -1,14 +1,9 @@
 option java_package = "com.proto" ;
 option java_outer_classname = "PlayerModule" ;
 
-	message Player{
-		required int32 playerId = 1 ;
-		required string name = 2 ;
-		repeated int32 gae = 3; 
-		optional SEX sex = 4 [default = MALE];
-		
-		enum SEX {
-    			MALE = 0;
-			    WOMAN = 1 ;
-		}
+	message PBPlayer{
+		required int64 playerId = 1 ;
+		required int32 age = 2;
+		required string name = 3;
+		repeated int32 skills = 4;
 	}

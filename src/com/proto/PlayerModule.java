@@ -8,139 +8,80 @@ public final class PlayerModule {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
   }
-  public interface PlayerOrBuilder
+  public interface PBPlayerOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
     
-    // required int32 playerId = 1;
+    // required int64 playerId = 1;
     boolean hasPlayerId();
-    int getPlayerId();
+    long getPlayerId();
     
-    // required string name = 2;
+    // required int32 age = 2;
+    boolean hasAge();
+    int getAge();
+    
+    // required string name = 3;
     boolean hasName();
     String getName();
     
-    // repeated int32 gae = 3;
-    java.util.List<java.lang.Integer> getGaeList();
-    int getGaeCount();
-    int getGae(int index);
-    
-    // optional .Player.SEX sex = 4 [default = MALE];
-    boolean hasSex();
-    com.proto.PlayerModule.Player.SEX getSex();
+    // repeated int32 skills = 4;
+    java.util.List<java.lang.Integer> getSkillsList();
+    int getSkillsCount();
+    int getSkills(int index);
   }
-  public static final class Player extends
+  public static final class PBPlayer extends
       com.google.protobuf.GeneratedMessage
-      implements PlayerOrBuilder {
-    // Use Player.newBuilder() to construct.
-    private Player(Builder builder) {
+      implements PBPlayerOrBuilder {
+    // Use PBPlayer.newBuilder() to construct.
+    private PBPlayer(Builder builder) {
       super(builder);
     }
-    private Player(boolean noInit) {}
+    private PBPlayer(boolean noInit) {}
     
-    private static final Player defaultInstance;
-    public static Player getDefaultInstance() {
+    private static final PBPlayer defaultInstance;
+    public static PBPlayer getDefaultInstance() {
       return defaultInstance;
     }
     
-    public Player getDefaultInstanceForType() {
+    public PBPlayer getDefaultInstanceForType() {
       return defaultInstance;
     }
     
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.proto.PlayerModule.internal_static_Player_descriptor;
+      return com.proto.PlayerModule.internal_static_PBPlayer_descriptor;
     }
     
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.proto.PlayerModule.internal_static_Player_fieldAccessorTable;
-    }
-    
-    public enum SEX
-        implements com.google.protobuf.ProtocolMessageEnum {
-      MALE(0, 0),
-      WOMAN(1, 1),
-      ;
-      
-      public static final int MALE_VALUE = 0;
-      public static final int WOMAN_VALUE = 1;
-      
-      
-      public final int getNumber() { return value; }
-      
-      public static SEX valueOf(int value) {
-        switch (value) {
-          case 0: return MALE;
-          case 1: return WOMAN;
-          default: return null;
-        }
-      }
-      
-      public static com.google.protobuf.Internal.EnumLiteMap<SEX>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static com.google.protobuf.Internal.EnumLiteMap<SEX>
-          internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<SEX>() {
-              public SEX findValueByNumber(int number) {
-                return SEX.valueOf(number);
-              }
-            };
-      
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return com.proto.PlayerModule.Player.getDescriptor().getEnumTypes().get(0);
-      }
-      
-      private static final SEX[] VALUES = {
-        MALE, WOMAN, 
-      };
-      
-      public static SEX valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        return VALUES[desc.getIndex()];
-      }
-      
-      private final int index;
-      private final int value;
-      
-      private SEX(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-      
-      // @@protoc_insertion_point(enum_scope:Player.SEX)
+      return com.proto.PlayerModule.internal_static_PBPlayer_fieldAccessorTable;
     }
     
     private int bitField0_;
-    // required int32 playerId = 1;
+    // required int64 playerId = 1;
     public static final int PLAYERID_FIELD_NUMBER = 1;
-    private int playerId_;
+    private long playerId_;
     public boolean hasPlayerId() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
-    public int getPlayerId() {
+    public long getPlayerId() {
       return playerId_;
     }
     
-    // required string name = 2;
-    public static final int NAME_FIELD_NUMBER = 2;
+    // required int32 age = 2;
+    public static final int AGE_FIELD_NUMBER = 2;
+    private int age_;
+    public boolean hasAge() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    public int getAge() {
+      return age_;
+    }
+    
+    // required string name = 3;
+    public static final int NAME_FIELD_NUMBER = 3;
     private java.lang.Object name_;
     public boolean hasName() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     public String getName() {
       java.lang.Object ref = name_;
@@ -168,35 +109,25 @@ public final class PlayerModule {
       }
     }
     
-    // repeated int32 gae = 3;
-    public static final int GAE_FIELD_NUMBER = 3;
-    private java.util.List<java.lang.Integer> gae_;
+    // repeated int32 skills = 4;
+    public static final int SKILLS_FIELD_NUMBER = 4;
+    private java.util.List<java.lang.Integer> skills_;
     public java.util.List<java.lang.Integer>
-        getGaeList() {
-      return gae_;
+        getSkillsList() {
+      return skills_;
     }
-    public int getGaeCount() {
-      return gae_.size();
+    public int getSkillsCount() {
+      return skills_.size();
     }
-    public int getGae(int index) {
-      return gae_.get(index);
-    }
-    
-    // optional .Player.SEX sex = 4 [default = MALE];
-    public static final int SEX_FIELD_NUMBER = 4;
-    private com.proto.PlayerModule.Player.SEX sex_;
-    public boolean hasSex() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    public com.proto.PlayerModule.Player.SEX getSex() {
-      return sex_;
+    public int getSkills(int index) {
+      return skills_.get(index);
     }
     
     private void initFields() {
-      playerId_ = 0;
+      playerId_ = 0L;
+      age_ = 0;
       name_ = "";
-      gae_ = java.util.Collections.emptyList();;
-      sex_ = com.proto.PlayerModule.Player.SEX.MALE;
+      skills_ = java.util.Collections.emptyList();;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -204,6 +135,10 @@ public final class PlayerModule {
       if (isInitialized != -1) return isInitialized == 1;
       
       if (!hasPlayerId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasAge()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -219,16 +154,16 @@ public final class PlayerModule {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeInt32(1, playerId_);
+        output.writeInt64(1, playerId_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, getNameBytes());
-      }
-      for (int i = 0; i < gae_.size(); i++) {
-        output.writeInt32(3, gae_.get(i));
+        output.writeInt32(2, age_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeEnum(4, sex_.getNumber());
+        output.writeBytes(3, getNameBytes());
+      }
+      for (int i = 0; i < skills_.size(); i++) {
+        output.writeInt32(4, skills_.get(i));
       }
       getUnknownFields().writeTo(output);
     }
@@ -241,24 +176,24 @@ public final class PlayerModule {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, playerId_);
+          .computeInt64Size(1, playerId_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getNameBytes());
-      }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < gae_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeInt32SizeNoTag(gae_.get(i));
-        }
-        size += dataSize;
-        size += 1 * getGaeList().size();
+          .computeInt32Size(2, age_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(4, sex_.getNumber());
+          .computeBytesSize(3, getNameBytes());
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < skills_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeInt32SizeNoTag(skills_.get(i));
+        }
+        size += dataSize;
+        size += 1 * getSkillsList().size();
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -272,41 +207,41 @@ public final class PlayerModule {
       return super.writeReplace();
     }
     
-    public static com.proto.PlayerModule.Player parseFrom(
+    public static com.proto.PlayerModule.PBPlayer parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return newBuilder().mergeFrom(data).buildParsed();
     }
-    public static com.proto.PlayerModule.Player parseFrom(
+    public static com.proto.PlayerModule.PBPlayer parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return newBuilder().mergeFrom(data, extensionRegistry)
                .buildParsed();
     }
-    public static com.proto.PlayerModule.Player parseFrom(byte[] data)
+    public static com.proto.PlayerModule.PBPlayer parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return newBuilder().mergeFrom(data).buildParsed();
     }
-    public static com.proto.PlayerModule.Player parseFrom(
+    public static com.proto.PlayerModule.PBPlayer parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return newBuilder().mergeFrom(data, extensionRegistry)
                .buildParsed();
     }
-    public static com.proto.PlayerModule.Player parseFrom(java.io.InputStream input)
+    public static com.proto.PlayerModule.PBPlayer parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return newBuilder().mergeFrom(input).buildParsed();
     }
-    public static com.proto.PlayerModule.Player parseFrom(
+    public static com.proto.PlayerModule.PBPlayer parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return newBuilder().mergeFrom(input, extensionRegistry)
                .buildParsed();
     }
-    public static com.proto.PlayerModule.Player parseDelimitedFrom(java.io.InputStream input)
+    public static com.proto.PlayerModule.PBPlayer parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       Builder builder = newBuilder();
       if (builder.mergeDelimitedFrom(input)) {
@@ -315,7 +250,7 @@ public final class PlayerModule {
         return null;
       }
     }
-    public static com.proto.PlayerModule.Player parseDelimitedFrom(
+    public static com.proto.PlayerModule.PBPlayer parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -326,12 +261,12 @@ public final class PlayerModule {
         return null;
       }
     }
-    public static com.proto.PlayerModule.Player parseFrom(
+    public static com.proto.PlayerModule.PBPlayer parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return newBuilder().mergeFrom(input).buildParsed();
     }
-    public static com.proto.PlayerModule.Player parseFrom(
+    public static com.proto.PlayerModule.PBPlayer parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -341,7 +276,7 @@ public final class PlayerModule {
     
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.proto.PlayerModule.Player prototype) {
+    public static Builder newBuilder(com.proto.PlayerModule.PBPlayer prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -354,18 +289,18 @@ public final class PlayerModule {
     }
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements com.proto.PlayerModule.PlayerOrBuilder {
+       implements com.proto.PlayerModule.PBPlayerOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.proto.PlayerModule.internal_static_Player_descriptor;
+        return com.proto.PlayerModule.internal_static_PBPlayer_descriptor;
       }
       
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.proto.PlayerModule.internal_static_Player_fieldAccessorTable;
+        return com.proto.PlayerModule.internal_static_PBPlayer_fieldAccessorTable;
       }
       
-      // Construct using com.proto.PlayerModule.Player.newBuilder()
+      // Construct using com.proto.PlayerModule.PBPlayer.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -384,13 +319,13 @@ public final class PlayerModule {
       
       public Builder clear() {
         super.clear();
-        playerId_ = 0;
+        playerId_ = 0L;
         bitField0_ = (bitField0_ & ~0x00000001);
-        name_ = "";
+        age_ = 0;
         bitField0_ = (bitField0_ & ~0x00000002);
-        gae_ = java.util.Collections.emptyList();;
+        name_ = "";
         bitField0_ = (bitField0_ & ~0x00000004);
-        sex_ = com.proto.PlayerModule.Player.SEX.MALE;
+        skills_ = java.util.Collections.emptyList();;
         bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
@@ -401,24 +336,24 @@ public final class PlayerModule {
       
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.proto.PlayerModule.Player.getDescriptor();
+        return com.proto.PlayerModule.PBPlayer.getDescriptor();
       }
       
-      public com.proto.PlayerModule.Player getDefaultInstanceForType() {
-        return com.proto.PlayerModule.Player.getDefaultInstance();
+      public com.proto.PlayerModule.PBPlayer getDefaultInstanceForType() {
+        return com.proto.PlayerModule.PBPlayer.getDefaultInstance();
       }
       
-      public com.proto.PlayerModule.Player build() {
-        com.proto.PlayerModule.Player result = buildPartial();
+      public com.proto.PlayerModule.PBPlayer build() {
+        com.proto.PlayerModule.PBPlayer result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
       
-      private com.proto.PlayerModule.Player buildParsed()
+      private com.proto.PlayerModule.PBPlayer buildParsed()
           throws com.google.protobuf.InvalidProtocolBufferException {
-        com.proto.PlayerModule.Player result = buildPartial();
+        com.proto.PlayerModule.PBPlayer result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(
             result).asInvalidProtocolBufferException();
@@ -426,8 +361,8 @@ public final class PlayerModule {
         return result;
       }
       
-      public com.proto.PlayerModule.Player buildPartial() {
-        com.proto.PlayerModule.Player result = new com.proto.PlayerModule.Player(this);
+      public com.proto.PlayerModule.PBPlayer buildPartial() {
+        com.proto.PlayerModule.PBPlayer result = new com.proto.PlayerModule.PBPlayer(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -437,50 +372,50 @@ public final class PlayerModule {
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
-        result.name_ = name_;
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
-          gae_ = java.util.Collections.unmodifiableList(gae_);
-          bitField0_ = (bitField0_ & ~0x00000004);
-        }
-        result.gae_ = gae_;
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+        result.age_ = age_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
         }
-        result.sex_ = sex_;
+        result.name_ = name_;
+        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+          skills_ = java.util.Collections.unmodifiableList(skills_);
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.skills_ = skills_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
       
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.proto.PlayerModule.Player) {
-          return mergeFrom((com.proto.PlayerModule.Player)other);
+        if (other instanceof com.proto.PlayerModule.PBPlayer) {
+          return mergeFrom((com.proto.PlayerModule.PBPlayer)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
       
-      public Builder mergeFrom(com.proto.PlayerModule.Player other) {
-        if (other == com.proto.PlayerModule.Player.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.proto.PlayerModule.PBPlayer other) {
+        if (other == com.proto.PlayerModule.PBPlayer.getDefaultInstance()) return this;
         if (other.hasPlayerId()) {
           setPlayerId(other.getPlayerId());
+        }
+        if (other.hasAge()) {
+          setAge(other.getAge());
         }
         if (other.hasName()) {
           setName(other.getName());
         }
-        if (!other.gae_.isEmpty()) {
-          if (gae_.isEmpty()) {
-            gae_ = other.gae_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+        if (!other.skills_.isEmpty()) {
+          if (skills_.isEmpty()) {
+            skills_ = other.skills_;
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
-            ensureGaeIsMutable();
-            gae_.addAll(other.gae_);
+            ensureSkillsIsMutable();
+            skills_.addAll(other.skills_);
           }
           onChanged();
-        }
-        if (other.hasSex()) {
-          setSex(other.getSex());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -488,6 +423,10 @@ public final class PlayerModule {
       
       public final boolean isInitialized() {
         if (!hasPlayerId()) {
+          
+          return false;
+        }
+        if (!hasAge()) {
           
           return false;
         }
@@ -523,37 +462,31 @@ public final class PlayerModule {
             }
             case 8: {
               bitField0_ |= 0x00000001;
-              playerId_ = input.readInt32();
+              playerId_ = input.readInt64();
               break;
             }
-            case 18: {
+            case 16: {
               bitField0_ |= 0x00000002;
-              name_ = input.readBytes();
-              break;
-            }
-            case 24: {
-              ensureGaeIsMutable();
-              gae_.add(input.readInt32());
+              age_ = input.readInt32();
               break;
             }
             case 26: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              while (input.getBytesUntilLimit() > 0) {
-                addGae(input.readInt32());
-              }
-              input.popLimit(limit);
+              bitField0_ |= 0x00000004;
+              name_ = input.readBytes();
               break;
             }
             case 32: {
-              int rawValue = input.readEnum();
-              com.proto.PlayerModule.Player.SEX value = com.proto.PlayerModule.Player.SEX.valueOf(rawValue);
-              if (value == null) {
-                unknownFields.mergeVarintField(4, rawValue);
-              } else {
-                bitField0_ |= 0x00000008;
-                sex_ = value;
+              ensureSkillsIsMutable();
+              skills_.add(input.readInt32());
+              break;
+            }
+            case 34: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              while (input.getBytesUntilLimit() > 0) {
+                addSkills(input.readInt32());
               }
+              input.popLimit(limit);
               break;
             }
           }
@@ -562,15 +495,15 @@ public final class PlayerModule {
       
       private int bitField0_;
       
-      // required int32 playerId = 1;
-      private int playerId_ ;
+      // required int64 playerId = 1;
+      private long playerId_ ;
       public boolean hasPlayerId() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
-      public int getPlayerId() {
+      public long getPlayerId() {
         return playerId_;
       }
-      public Builder setPlayerId(int value) {
+      public Builder setPlayerId(long value) {
         bitField0_ |= 0x00000001;
         playerId_ = value;
         onChanged();
@@ -578,15 +511,36 @@ public final class PlayerModule {
       }
       public Builder clearPlayerId() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        playerId_ = 0;
+        playerId_ = 0L;
         onChanged();
         return this;
       }
       
-      // required string name = 2;
+      // required int32 age = 2;
+      private int age_ ;
+      public boolean hasAge() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      public int getAge() {
+        return age_;
+      }
+      public Builder setAge(int value) {
+        bitField0_ |= 0x00000002;
+        age_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearAge() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        age_ = 0;
+        onChanged();
+        return this;
+      }
+      
+      // required string name = 3;
       private java.lang.Object name_ = "";
       public boolean hasName() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       public String getName() {
         java.lang.Object ref = name_;
@@ -602,108 +556,84 @@ public final class PlayerModule {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  bitField0_ |= 0x00000004;
         name_ = value;
         onChanged();
         return this;
       }
       public Builder clearName() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         name_ = getDefaultInstance().getName();
         onChanged();
         return this;
       }
       void setName(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         name_ = value;
         onChanged();
       }
       
-      // repeated int32 gae = 3;
-      private java.util.List<java.lang.Integer> gae_ = java.util.Collections.emptyList();;
-      private void ensureGaeIsMutable() {
-        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-          gae_ = new java.util.ArrayList<java.lang.Integer>(gae_);
-          bitField0_ |= 0x00000004;
+      // repeated int32 skills = 4;
+      private java.util.List<java.lang.Integer> skills_ = java.util.Collections.emptyList();;
+      private void ensureSkillsIsMutable() {
+        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+          skills_ = new java.util.ArrayList<java.lang.Integer>(skills_);
+          bitField0_ |= 0x00000008;
          }
       }
       public java.util.List<java.lang.Integer>
-          getGaeList() {
-        return java.util.Collections.unmodifiableList(gae_);
+          getSkillsList() {
+        return java.util.Collections.unmodifiableList(skills_);
       }
-      public int getGaeCount() {
-        return gae_.size();
+      public int getSkillsCount() {
+        return skills_.size();
       }
-      public int getGae(int index) {
-        return gae_.get(index);
+      public int getSkills(int index) {
+        return skills_.get(index);
       }
-      public Builder setGae(
+      public Builder setSkills(
           int index, int value) {
-        ensureGaeIsMutable();
-        gae_.set(index, value);
+        ensureSkillsIsMutable();
+        skills_.set(index, value);
         onChanged();
         return this;
       }
-      public Builder addGae(int value) {
-        ensureGaeIsMutable();
-        gae_.add(value);
+      public Builder addSkills(int value) {
+        ensureSkillsIsMutable();
+        skills_.add(value);
         onChanged();
         return this;
       }
-      public Builder addAllGae(
+      public Builder addAllSkills(
           java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureGaeIsMutable();
-        super.addAll(values, gae_);
+        ensureSkillsIsMutable();
+        super.addAll(values, skills_);
         onChanged();
         return this;
       }
-      public Builder clearGae() {
-        gae_ = java.util.Collections.emptyList();;
-        bitField0_ = (bitField0_ & ~0x00000004);
-        onChanged();
-        return this;
-      }
-      
-      // optional .Player.SEX sex = 4 [default = MALE];
-      private com.proto.PlayerModule.Player.SEX sex_ = com.proto.PlayerModule.Player.SEX.MALE;
-      public boolean hasSex() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
-      }
-      public com.proto.PlayerModule.Player.SEX getSex() {
-        return sex_;
-      }
-      public Builder setSex(com.proto.PlayerModule.Player.SEX value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField0_ |= 0x00000008;
-        sex_ = value;
-        onChanged();
-        return this;
-      }
-      public Builder clearSex() {
+      public Builder clearSkills() {
+        skills_ = java.util.Collections.emptyList();;
         bitField0_ = (bitField0_ & ~0x00000008);
-        sex_ = com.proto.PlayerModule.Player.SEX.MALE;
         onChanged();
         return this;
       }
       
-      // @@protoc_insertion_point(builder_scope:Player)
+      // @@protoc_insertion_point(builder_scope:PBPlayer)
     }
     
     static {
-      defaultInstance = new Player(true);
+      defaultInstance = new PBPlayer(true);
       defaultInstance.initFields();
     }
     
-    // @@protoc_insertion_point(class_scope:Player)
+    // @@protoc_insertion_point(class_scope:PBPlayer)
   }
   
   private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_Player_descriptor;
+    internal_static_PBPlayer_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_Player_fieldAccessorTable;
+      internal_static_PBPlayer_fieldAccessorTable;
   
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -713,25 +643,24 @@ public final class PlayerModule {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\026protofile/Player.proto\"q\n\006Player\022\020\n\010pl" +
-      "ayerId\030\001 \002(\005\022\014\n\004name\030\002 \002(\t\022\013\n\003gae\030\003 \003(\005\022" +
-      "\036\n\003sex\030\004 \001(\0162\013.Player.SEX:\004MALE\"\032\n\003SEX\022\010" +
-      "\n\004MALE\020\000\022\t\n\005WOMAN\020\001B\031\n\tcom.protoB\014Player" +
-      "Module"
+      "\n\026protofile/Player.proto\"G\n\010PBPlayer\022\020\n\010" +
+      "playerId\030\001 \002(\003\022\013\n\003age\030\002 \002(\005\022\014\n\004name\030\003 \002(" +
+      "\t\022\016\n\006skills\030\004 \003(\005B\031\n\tcom.protoB\014PlayerMo" +
+      "dule"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
         public com.google.protobuf.ExtensionRegistry assignDescriptors(
             com.google.protobuf.Descriptors.FileDescriptor root) {
           descriptor = root;
-          internal_static_Player_descriptor =
+          internal_static_PBPlayer_descriptor =
             getDescriptor().getMessageTypes().get(0);
-          internal_static_Player_fieldAccessorTable = new
+          internal_static_PBPlayer_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_Player_descriptor,
-              new java.lang.String[] { "PlayerId", "Name", "Gae", "Sex", },
-              com.proto.PlayerModule.Player.class,
-              com.proto.PlayerModule.Player.Builder.class);
+              internal_static_PBPlayer_descriptor,
+              new java.lang.String[] { "PlayerId", "Age", "Name", "Skills", },
+              com.proto.PlayerModule.PBPlayer.class,
+              com.proto.PlayerModule.PBPlayer.Builder.class);
           return null;
         }
       };
